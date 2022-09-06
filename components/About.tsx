@@ -1,51 +1,59 @@
+import Image from "next/image";
 import React from "react";
+import ReactLogo from "../imgs/react.png";
+import Profile from "../imgs/profile.jpg";
+import Tile from "./Tile";
 
 export default function About() {
   return (
-    <section id="about">
-      <div className="tile tile-1">
-        <div>
-          <h2>STACK</h2>
+    <section
+      id="about"
+      className="grid grid-rows-2 grid-cols-3 gap-5 p-[20px] rounded-lg"
+    >
+      <div className="col-start-1 col-end-2">
+        <Tile title="STACK">
+          <p className="text-2xl text-center">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
+            tempore accusantium voluptates corrupti facere culpa necessitatibus,
+          </p>
+          <Image src={ReactLogo} width={200} height={178.95} />
+        </Tile>
+      </div>
+
+      <div className="col-start-2 col-end-3 row-span-2">
+        <Tile title="ABOUT">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
             tempore accusantium voluptates corrupti facere culpa necessitatibus,
           </p>
-          <img src="img/react.png" alt="" width="200" />
-        </div>
+          <Image
+            src={Profile}
+            width={400}
+            height={400}
+            className="object-cover rounded-full"
+          />
+        </Tile>
       </div>
-      <div className="tile tile-2">
-        <div>
-          <h2>ABOUT</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
-            tempore accusantium voluptates corrupti facere culpa necessitatibus,
-          </p>
-          <img src="img/profile.png" alt="" width="100" height="100" />
-        </div>
-      </div>
-      <div className="tile tile-3">
-        <div>
-          <h2>REFERENCES</h2>
+      <div className="col-start-3 col-end-4 row-start-1 row-end-2">
+        <Tile title="REFERENCES">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
             tempore accusantium voluptates corrupti facere culpa necessitatibus,
           </p>
           <img src="img/microsoft.png" alt="" width="300" />
-        </div>
+        </Tile>
       </div>
-      <div className="tile tile-4">
-        <div>
-          <h2>SERVICES</h2>
+      <div className="col-start-1 col-end-2 row-start-2 row-end-3">
+        <Tile title="SERVICES">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
             tempore accusantium voluptates corrupti facere culpa necessitatibus,
           </p>
           <img src="img/cloud.png" alt="" width="300" />
-        </div>
+        </Tile>
       </div>
-      <div className="tile tile-5">
-        <div>
-          <h2>AWARDS</h2>
+      <div className="col-start-3 col-end-4 row-start-2 row-end-3">
+        <Tile title="AWARDS">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
             tempore accusantium voluptates corrupti facere culpa necessitatibus,
@@ -53,7 +61,7 @@ export default function About() {
             dignissimos a repellendus nisi.
           </p>
           <img src="img/trophy.png" alt="" />
-        </div>
+        </Tile>
       </div>
     </section>
   );
